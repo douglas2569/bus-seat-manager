@@ -1,9 +1,3 @@
-// const Database = []
-// let id = 0
-
-// export {id}
-// export default Database 
-
 export default class Database{
      static database = []
      static id = 0
@@ -12,5 +6,11 @@ export default class Database{
         Database.id += 1
         data.id = Database.id
         Database.database.push(data);
-     }     
+     }  
+     
+     static getData(){
+
+      return Database.database
+     }
+     
 }

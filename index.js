@@ -10,8 +10,7 @@ class Home {
             
             const user = new User(form.get('name'), form.get('cpf'), form.get('dateOfBirth'), form.get('bloodType'))                   
             user.save()
-            console.log('->', Database.database)
-            //window.location.href = './Reserve/index.html';
+            window.location.href = './Reserve/index.html';
         })
     }
 }

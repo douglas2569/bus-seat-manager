@@ -1,4 +1,4 @@
-import {Database} from "../database/index.js";
+import {Database} from "../Database/index.js";
 
 class Reserve {
 
@@ -8,6 +8,20 @@ class Reserve {
             return 'Cadeira Cadastrada com Sucesso'
         })
     }
+
+    show(container){
+        const table = document.createElement('table')
+        const row = document.createElement('tr')
+        const column = document.createElement('td')
+        const header = document.createElement('th')
+
+        for (let i = 0; i <  Object.keys(Database.getData[0]).length; i++) {
+            //th
+            
+        }
+        
+        container.appendChild(table);
+    }    
 
 }
 
