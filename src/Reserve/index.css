@@ -44,7 +44,7 @@
 }
 h1, h2{
     display: block;
-    text-align: left;    
+    text-align: center;    
     min-width: 306px;
 }
 h2{
@@ -53,4 +53,19 @@ h2{
 
 footer{
     margin-top: 50px;
+}
+
+table{
+    margin-top: 30px;
+    border-collapse: collapse; 
+    width: 100%;       
+}
+table th{
+    padding-bottom: 5px;
+    text-align: center;
+}
+table td{
+    border: 1px solid #000;
+    padding: 5px;
+
 }

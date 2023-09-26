@@ -1,4 +1,4 @@
-import Database from "../Database/index.js";
+import Database from "../database/index.js";
 
 export default class User { //reponsibilide
     constructor(name, cpf, dateOfBirth, bloodType){        

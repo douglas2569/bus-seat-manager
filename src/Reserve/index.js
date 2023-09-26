@@ -1,30 +1,33 @@
-import Database from "../Database/index.js";
+import Database from "../database/index.js";
 
-class Reserve {
-
-    handleRegister(){
-        if(document.querySelector('.register-button') === null) return;
-
-        document.querySelector('.register-button').addEventListener('click',()=>{
-            Database[Database.length].chair = chair
-            return 'Cadeira Cadastrada com Sucesso'
-        })
+export default class Reserve {
+    constructor(){
+        this.database = Database.getData() 
     }
 
-    show(container){
-        const table = document.createElement('table')
-        const tr = document.createElement('tr')
-        const td = document.createElement('td')
-        const th = document.createElement('th')
+    handleRegister(){        
+        const chairs =  document.querySelectorAll('.reserve-seat span')
 
-        
-        for (let i = 0; i <  Object.keys(Database.getData[0]).length; i++) {
-                        
-        }
-        
-        container.appendChild(table);
-    } 
-    
+        chairs.forEach(chair => {
+            chair.addEventListener('click',()=>{ 
+                if(this.isAllocated(chair)){
+                   alert('Poltrona ocupada')
+
+                }else{                    
+                    Database.setChair(this.database.length-1, chair.textContent)  
+                    this.coloringChair()                  
+                    this.show(document.querySelector('table'))
+                    console.log(this.database)
+                    alert('Poltrona reservada com Sucesso')                    
+                    window.scrollTo(0 , document.body.scrollHeight);
+                }
+
+            })
+            
+        });
+
+    }
+
     addNumberSeats(number=8){
         const reserveSeat = document.querySelector('.reserve-seat')
                   
@@ -45,9 +48,60 @@ class Reserve {
         }
         
     }
+    
+    show(container){  
+        const rows = container.querySelectorAll('tr:not(.first-line)')
+        rows.forEach((row)=>{
+            row.remove()
+        })
+
+        for (let i = 0; i <  this.database.length; i++) {            
+            const tr = document.createElement('tr')
+            const td1 = document.createElement('td') 
+            const td2 = document.createElement('td') 
+            // const td3 = document.createElement('td') 
+            const td4 = document.createElement('td') 
+            
+            td1.textContent =  this.database[i].chair      
+            td2.textContent =  this.database[i].name      
+            //td3.textContent =  this.database[i].dateOfBirth      
+            td4.textContent =  this.database[i].bloodType      
+
+            tr.appendChild(td1)
+            tr.appendChild(td2)
+            // tr.appendChild(td3)
+            tr.appendChild(td4)
+            
+            if(this.database[i].chair != null)
+                container.appendChild(tr);
+        }
+        
+    } 
+    
+    isAllocated(chair){ 
+
+        for (let i = 0; i < this.database.length; i++) {                         
+            if(this.database[i].chair == chair.textContent)            
+                return true
+        }
+
+        return false
+    }
+
+    coloringChair(){
+        const chairs = document.querySelectorAll('.reserve-seat span')                            
+        for (let j = 0; j < chairs.length; j++) { 
+            if(this.isAllocated(chairs[j])){
+                chairs[j].style.color = 'red'
+            }else{
+                chairs[j].style.color = 'rgb(3, 146, 3)'
+            }                
+        }
+           
+    }
+
+    returnDatabase(){
+        return this.database
+    }
 
 }
-
-const reserve = new Reserve();
-reserve.handleRegister();
-reserve.addNumberSeats();
