@@ -8,7 +8,7 @@ export default class User { //reponsibilide
         this.bloodType = bloodType
     }
 
-    save(){     
+    create(){     
         Database.setRegister({            
             name:this.name,
             cpf: this.cpf,

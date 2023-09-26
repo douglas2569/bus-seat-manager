@@ -1,0 +1,56 @@
+@import url('../../assets/css/style.css');
+
+.reserve-seat{    
+    width: var(--van-width);
+    height: var(--van-height);
+    background-image: url('../../assets/images/top-view.png');
+    background-size: cover;        
+
+   display: flex;
+   flex-direction: column;
+   padding-top: 215px;
+   padding-left: 33px;
+   padding-right: 33px;
+}
+.reserve-seat > div{ 
+    display: flex;
+    justify-content: space-between;
+}
+
+.reserve-seat .first{ 
+    margin-bottom: 105px;
+}
+
+.reserve-seat .first + div{
+    margin-bottom: 53px;
+}
+
+.reserve-seat .first + div + div{
+    margin-bottom: 53px;    
+}
+
+.reserve-seat span{
+    width: 94px;
+    height: 63.51px;
+    font-size: 2em;
+    font-weight: bolder;    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+
+    color: rgb(3, 146, 3);
+    cursor: pointer;
+}
+h1, h2{
+    display: block;
+    text-align: left;    
+    min-width: 306px;
+}
+h2{
+    margin-bottom: 40px;
+}
+
+footer{
+    margin-top: 50px;
+}

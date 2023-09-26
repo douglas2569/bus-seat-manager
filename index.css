@@ -1,22 +1,4 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    font-family: 'Roboto';
-}
-:root{
-    --sm1-space-between-elements: 3px;
-    --md1-space-between-elements: 9px;
-    --md2-space-between-elements: 12px;
-    --md3-space-between-elements: 15px;
-}
-
-@font-face {
-    font-family: 'Roboto';
-    src: url('./assets/fonts/roboto/Roboto-Regular.ttf')'';
-}
+@import url('./assets/css/style.css');
 
 body{
     padding: var(--md3-space-between-elements);

@@ -1,5 +1,4 @@
 import User from './src/User/index.js'
-import Database from './src/Database/index.js'
 
 class Home { 
     handleRegister(){
@@ -9,8 +8,8 @@ class Home {
             const form = new FormData(document.querySelector('form'))
             
             const user = new User(form.get('name'), form.get('cpf'), form.get('dateOfBirth'), form.get('bloodType'))                   
-            user.save()
-            window.location.href = './Reserve/index.html';
+            user.create()
+            window.location.href = './src/Reserve/index.html';
         })
     }
 }
