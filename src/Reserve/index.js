@@ -58,18 +58,15 @@ export default class Reserve {
         for (let i = 0; i <  this.database.length; i++) {            
             const tr = document.createElement('tr')
             const td1 = document.createElement('td') 
-            const td2 = document.createElement('td') 
-            // const td3 = document.createElement('td') 
+            const td2 = document.createElement('td')             
             const td4 = document.createElement('td') 
             
             td1.textContent =  this.database[i].chair      
-            td2.textContent =  this.database[i].name      
-            //td3.textContent =  this.database[i].dateOfBirth      
+            td2.textContent =  this.database[i].name                   
             td4.textContent =  this.database[i].bloodType      
 
             tr.appendChild(td1)
-            tr.appendChild(td2)
-            // tr.appendChild(td3)
+            tr.appendChild(td2)            
             tr.appendChild(td4)
             
             if(this.database[i].chair != null)
