@@ -1,11 +1,11 @@
 export default class Database{
      static database = [
          {            
-               name:'C.Nascimento',
-               cpf: '222.222.222-22',
-               dateOfBirth: '16/09/23',
-               bloodType: 'O+',                    
-               chair: '1',                    
+            name:'C.Nascimento',
+            cpf: '222.222.222-22',
+            dateOfBirth: '16/09/23',
+            bloodType: 'O+',                    
+            chair: '1',                    
          },
          {            
             name:'Pedro Ferreira ',
